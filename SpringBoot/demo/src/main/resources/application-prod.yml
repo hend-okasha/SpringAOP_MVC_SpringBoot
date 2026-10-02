@@ -1,0 +1,3 @@
+demotasktracker:
+  max-tasks: 30
+  default-page-size: 10
