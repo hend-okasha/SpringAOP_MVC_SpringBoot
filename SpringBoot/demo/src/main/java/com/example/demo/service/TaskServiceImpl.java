@@ -30,12 +30,11 @@ public class TaskServiceImpl implements TaskService{
         this.taskRepository = taskRepository;
     }
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(TaskServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(TaskServiceImpl.class);
 
     @Override
     public Task createTask(Task task)  {
-        logger.info("Start create task with id : " + task.getId() );
+        logger.info("Start create task with id : " + task.getTitle() );
         if (task.getTitle() == null || task.getTitle().isBlank()) {
             throw new InvalidTaskException("Task title is required");
         }
@@ -44,7 +43,7 @@ public class TaskServiceImpl implements TaskService{
         }
         taskRepository.save(task);
 
-        logger.debug("logger debug: ");
+        logger.debug("logger debug: " + task.getId());
         return task;
     }
 

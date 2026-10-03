@@ -3,3 +3,21 @@ server:
 demotasktracker:
   max-tasks: 50
   default-page-size: 10
+
+logging:
+  level:
+    com.example.demo: TRACE
+
+info:
+  app:
+    name: Task Tracker
+    version: 1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  info:
+    env:
+      enabled: true
